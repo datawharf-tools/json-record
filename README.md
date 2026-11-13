@@ -10,7 +10,7 @@ An IntelliJ IDEA plugin: paste JSON, get Java `record` types.
 
 Use it from **Tools | Paste JSON as Java Record**, the editor **Generate** menu (Alt+Insert), or the Project view **New** menu.
 
-Requires IntelliJ IDEA 2025.2 or newer (Java support).
+Requires IntelliJ IDEA 2024.1 or newer (Java support).
 
 ## Build
 

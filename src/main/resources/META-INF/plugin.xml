@@ -4,19 +4,23 @@
     <vendor>Datawharf Tools</vendor>
 
     <description><![CDATA[
-    Paste JSON, get Java records. Works with IntelliJ IDEA 2025.2 and newer (requires Java support).
+    Paste JSON, get Java records. Works with IntelliJ IDEA 2024.1 and newer (requires Java support).
     <ul>
       <li>Generates nested <code>record</code> types with correct types (int, long, double, boolean, String, List, Object)</li>
       <li>Optional Jackson (<code>@JsonProperty</code>) or Gson (<code>@SerializedName</code>) annotations for snake_case and other non-Java names</li>
       <li>Merges array elements so optional fields become boxed types</li>
       <li>Insert at the caret, or create a new .java file from the Project view</li>
-      <li>No network access, no telemetry</li>
+      <li>No network access or telemetry; error reports are sent only if you choose to report one</li>
     </ul>
     Use it from Tools | Paste JSON as Java Record, the editor Generate menu (Alt+Insert), or the Project view New menu.
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <errorHandler implementation="com.intellij.diagnostic.JetBrainsMarketplaceErrorReportSubmitter"/>
+    </extensions>
 
     <actions>
         <action id="tools.datawharf.jsonrecord.Generate"
